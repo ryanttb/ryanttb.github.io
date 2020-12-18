@@ -27,6 +27,7 @@ $(document).ready( function() {
 
     $.get( {
       url: shareUrl, 
+      method: 'POST',
       dataType: 'json',
       success: function( data ) {
         $( "#status" ).html( data );
