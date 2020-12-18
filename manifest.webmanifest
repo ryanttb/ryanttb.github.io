@@ -3,12 +3,21 @@
   "short_name": "MyHome",
   "orientation": "portrait",
   "display": "standalone",
-  "icons": [ {
-      "src": "/assets/icon_128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "maskable any"
-  } ],
+  "icons": [
+    {
+		  "src": "/assets/icon_128x128.png",
+		  "sizes": "128x128",
+		  "type": "image/png",
+		  "purpose": "maskable any"
+	  },
+    {`
+		  "src": "/assets/icon_512x512.png",
+		  "sizes": "512x512",
+		  "type": "image/png",
+		  "purpose": "maskable any"
+	  }
+  ],
+  "scope": "/",
   "start_url": "/",
   "description": "Add stuff to your Echo Show Home Screen",
   "theme_color": "#cb5454",
