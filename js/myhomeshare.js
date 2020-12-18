@@ -15,24 +15,23 @@ $(document).ready( function() {
   const apiKey = 'Ci1Jc7bjrm9E0P5p6HXVt74Gcp6BbYyr4vzCyHny';
   const appUrl = 'https://6feux3h7n2.execute-api.us-east-1.amazonaws.com/default/AnchorMyHome';
 
-  let shareUrl = `${appUrl}?customerId=A12TKPCQEFNPCQ&text=${text}&image=${url}`;
+  $('#share').on('click', function() {
+    let shareUrl = `${appUrl}?customerId=A12TKPCQEFNPCQ&text=${text}&image=${url}`;
 
-  $('#status').href = shareUrl;
+    $.ajaxSetup({
+      cache: false,
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('x-api-key', 'Ci1Jc7bjrm9E0P5p6HXVt74Gcp6BbYyr4vzCyHny');
+      }
+    });
 
-  $.ajaxSetup({
-    cache: false,
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader('x-api-key', 'Ci1Jc7bjrm9E0P5p6HXVt74Gcp6BbYyr4vzCyHny');
-    }
-  });
-
-  $.get( {
-    url: shareUrl, 
-    dataType: 'json',
-    success: function( data ) {
-      $( "#status" ).html( data );
+    $.get( {
+      url: shareUrl, 
+      dataType: 'json',
+      success: function( data ) {
+        $( "#status" ).html( data );
         alert( "Load was performed." );
       }
     });
-      
+  });
 } );
