@@ -12,5 +12,13 @@
   "start_url": "/",
   "description": "Add stuff to your Echo Show Home Screen",
   "theme_color": "#cb5454",
-  "background_color": "#f1dfd4"
+  "background_color": "#f1dfd4",
+  "share_target": {
+    "action": "share.html",
+    "params": {
+      "title": "name",
+      "text": "description",
+      "url": "link"
+    }
+  }
 }
