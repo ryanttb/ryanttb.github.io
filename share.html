@@ -4,23 +4,19 @@
     <link rel="manifest" href="manifest.webmanifest">
   </head>
   <body>
-      <h1>title</h1>
-      <div id="text">text</div>
-      <div id="url">url</div>
-    <script>
-      window.addEventListener('load', () => {
-        const parsedUrl = new URL(window.location);
-        const { searchParams } = parsedUrl;
-          
+    <h1>title</h1>
 
-		document.querySelector('h1').textContent = searchParams.get('title');
-		document.querySelector('#text').textContent = searchParams.get('text');
-		document.querySelector('#url').textContent = searchParams.get('url');
+    <p id="text">text</p>
 
-        console.log("Title shared:", searchParams.get('name'));
-        console.log("Text shared:", searchParams.get('description'));
-        console.log("URL shared:", searchParams.get('link'));
-      });
-    </script>
+    <img id="url" src="" />
+
+    <p>
+      <a id="share" href="">Post</a>
+    </p>
+
+    <p id="status"></p>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/myhomeshare.js"></script>
   </body>
 </html>
